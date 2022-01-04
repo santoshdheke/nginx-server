@@ -1,0 +1,23 @@
+server {
+            listen 80;
+            listen [::]:80;
+
+            root /path/to/root/folder;
+            index index.php index.html index.htm;
+
+            server_name servername.com;
+
+         location / {
+            #autoindex on;
+            try_files $uri $uri/ /index.php?$query_string;
+            }
+
+            location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php8.0-fpm.sock;
+            }
+
+          location ~ /\.ht {
+                deny all;
+           }
+    }
