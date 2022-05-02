@@ -1,3 +1,3 @@
 read name
 
-echo $santosh;
+echo $name;
