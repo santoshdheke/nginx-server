@@ -1,3 +1,1 @@
-read name
-
-echo $name;
+sudo systemctl restart nginx
