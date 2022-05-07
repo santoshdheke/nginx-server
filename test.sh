@@ -1,6 +1,8 @@
 echo "enter which php do you want to change"; 
  
- read version;
+ #read version;
+ 
+ $version = 8.1;
  
 {
  
