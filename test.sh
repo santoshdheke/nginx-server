@@ -1,10 +1,14 @@
-echo "enter sqlfile name";
-read sqlfile;
-echo "user database user";
-read user;
+echo "enter which php do you want to change"; 
+ 
+ read version;
+ 
+{
+ 
+    sudo update-alternatives --set php /usr/bin/php$version
+        
+} || {
+        
+    sudo apt-get install php$version php$version-zip php$version-mbstring php$version-gd php$version-dom php$version-mysql php$version-fpm php$version-curl
+    sudo update-alternatives --set php /usr/bin/php$version
 
-echo "database";
-read database;
-
-mysql -u $user -p $database < $(pwd)/$sqlfile
-
+}
