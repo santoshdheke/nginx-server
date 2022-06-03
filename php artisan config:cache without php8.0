@@ -1,0 +1,4 @@
+alias php-cli=/opt/alt/php80/usr/bin/php
+php-cli artisan config:cache
+
+// this two comment can run php artisan any command /otp/alt/php80 and another php vesionn
